@@ -1,0 +1,105 @@
+@font-face {
+  font-family: Centra;
+  src: url("./assets/font/CentraNo2-Bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: Centra;
+  src: url("./assets/font/CentraNo2-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: Centra;
+  src: url("./assets/font/CentraNo2-Book.ttf");
+  font-weight: 400;
+}
+body {
+  font-weight: 400;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
+  background-color: #121212 !important;
+  color: #fff !important;
+  font-family: "Centra", sans-serif !important;
+}
+.container-bg {
+  background: url("../assets/img/banner-bg.png");
+  background-size: cover;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  scroll-snap-align: start;
+  object-fit: cover;
+}
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  padding: "3rem";
+}
+.Intro {
+  padding-left: 2rem;
+  margin-top: 7rem;
+}
+.rot-wrapper {
+  height: 50px;
+  overflow: hidden;
+}
+.my-ani {
+  height: 100%;
+  animation: move 10s ease-in-out infinite alternate;
+}
+@keyframes move {
+  25% {
+    transform: translateY(-50px);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  75% {
+    transform: translateY(-150px);
+  }
+  100% {
+    transform: translateY(-200px);
+  }
+}
+.rot-item {
+  font-size: 30px;
+  font-weight: bold;
+  color: #61bffb;
+  height: 50px;
+  text-transform: uppercase;
+}
+.astro {
+  animation: updown 3s linear infinite;
+}
+@keyframes updown {
+  0% {
+    transform: translateY(-30px);
+  }
+  50% {
+    transform: translateY(40px);
+  }
+  100% {
+    transform: translateY(-30px);
+  }
+}
+
+.welcome {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 700;
+  background-image: linear-gradient(
+    to right,
+    #270537,
+    #381e5f,
+    #41398b,
+    #3e56ba,
+    #1276eb
+  );
+}
+.name {
+}

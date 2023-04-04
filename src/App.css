@@ -1,0 +1,25 @@
+@font-face {
+    font-family: myfont;
+    src: url("../src/assets/font/CentraNo2-Bold.ttf");
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: myfont;
+    
+}
+.myapp-container
+{
+
+overflow: hidden;
+}
+html
+{
+    scroll-behavior: smooth;
+}
+body
+{
+    width: 100%;
+}

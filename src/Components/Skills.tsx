@@ -26,12 +26,7 @@ function Skills() {
   const pathname = url.pathname;
 
   return (
-  <m.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
-      exit={{ opacity: 0, x: -100 }}
-    >
+ 
       <Box className={pathname === "/skills" ? "skills-bg" : "jump-up"}>
         {pathname === "/skills" ? <NavBar /> : ""}
         <Box className="container">
@@ -54,11 +49,12 @@ function Skills() {
               spacing={1}
               sx={{
                 padding: "30px",
+                justifyContent:"center"
               }}
               rowGap={2}
               className="Cardcontainer"
             >
-              <Grid item xs={4}>
+              <Grid item xs={12} md={6} lg={4} >
                 <div className="cards">
                   <div className="front">
                     <img src={TS} alt="" />
@@ -75,7 +71,7 @@ function Skills() {
                   </div>
                 </div>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item  xs={12} md={6} lg={4} >
                
                 <div className="cards">
                   <div className="front">
@@ -93,7 +89,7 @@ function Skills() {
                 </div>
              
               </Grid>
-              <Grid item xs={4} rowGap={2}>
+              <Grid item  xs={12} md={6} lg={4} >
                 <div className="cards">
                   <div className="front">
                     <img src={JS} alt="" />
@@ -109,7 +105,7 @@ function Skills() {
                   </div>
                 </div>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item  xs={12} md={6} lg={4}>
                 <div className="cards">
                   <div className="front">
                     <img src={HTML} alt="" />
@@ -120,7 +116,7 @@ function Skills() {
                   </div>
                 </div>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item  xs={12} md={6} lg={4}>
                 <div className="cards">
                   <div className="front">
                     <img src={recoilimg} alt="" />
@@ -136,7 +132,7 @@ function Skills() {
                   </div>
                 </div>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item  xs={12} md={6} lg={4}>
                 <div className="cards">
                   <div className="front">
                     <img src={uiux} alt="" />
@@ -156,7 +152,7 @@ function Skills() {
           }}
         ></Box>
       </Box>
-    </m.div>
+
   );
 }
 

@@ -4,18 +4,18 @@
 
   width: 100%;
 }
+
 .project-heading {
   padding: 20px;
 }
+
 .jump {
-  background-image: linear-gradient(
-    to left bottom,
-    #121212,
-    #29263e,
-    #403b6d,
-    #5951a1,
-    #7567d7
-  );
+  background-image: linear-gradient(to left bottom,
+      #121212,
+      #29263e,
+      #403b6d,
+      #5951a1,
+      #7567d7);
   background-size: cover;
   background-repeat: no-repeat;
   padding: 20px;
@@ -25,4 +25,12 @@
   border-radius: 60px 60px 0 0;
   margin-top: -65px;
   margin-bottom: 20px;
+}
+
+@media screen and (max-width:850px) {
+  .project-heading {
+    h2 {
+      font-size: 40px;
+    }
+  }
 }

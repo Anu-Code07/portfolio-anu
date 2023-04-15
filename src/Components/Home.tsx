@@ -12,12 +12,7 @@ import Footer from "./Footer";
 
 const Home = () => {
   return (
-    <m.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
-      exit={{ opacity: 0, x: -100 }}
-    >
+  <div>
       <Box className="container-bg">
         <NavBar />
         <Box className="main-content">
@@ -50,13 +45,18 @@ const Home = () => {
             <Box
               sx={{
                 mt: 3,
+                // width:"500px"
+            
               }}
+              className="intro-text"
             >
               <Typography
                 sx={{
-                  width: "500px",
+               
                   color: "#fff",
+                 
                 }}
+               
               >
                I’m a Front end software developer, with a particular passion for design, creativity and I love <span style={{
                 fontSize:"20px",
@@ -82,7 +82,7 @@ const Home = () => {
               marginRight: "35px",
             }}
           >
-            <img src={headerImg} alt="" width="500px" height="650px" />
+            <img src={headerImg} alt="" />
           </Box>
         </Box>
       </Box>
@@ -90,7 +90,8 @@ const Home = () => {
       <Skills />
       <Projects />
       <Footer />
-    </m.div>
+      </div>
+  
   );
 };
 

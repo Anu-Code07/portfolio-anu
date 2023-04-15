@@ -3,16 +3,19 @@
   src: url("./assets/font/CentraNo2-Bold.ttf");
   font-weight: 700;
 }
+
 @font-face {
   font-family: Centra;
   src: url("./assets/font/CentraNo2-Medium.ttf");
   font-weight: 500;
 }
+
 @font-face {
   font-family: Centra;
   src: url("./assets/font/CentraNo2-Book.ttf");
   font-weight: 400;
 }
+
 body {
   font-weight: 400;
   overflow-x: hidden;
@@ -22,6 +25,7 @@ body {
   color: #fff !important;
   font-family: "Centra", sans-serif !important;
 }
+
 .container-bg {
   background: url("../assets/img/banner-bg.png");
   background-size: cover;
@@ -32,37 +36,47 @@ body {
   scroll-snap-align: start;
   object-fit: cover;
 }
+
 .main-content {
   display: flex;
   justify-content: space-between;
   padding: "3rem";
+
 }
+
 .Intro {
   padding-left: 2rem;
   margin-top: 7rem;
 }
+
 .rot-wrapper {
   height: 50px;
   overflow: hidden;
 }
+
 .my-ani {
   height: 100%;
   animation: move 10s ease-in-out infinite alternate;
 }
+
 @keyframes move {
   25% {
     transform: translateY(-50px);
   }
+
   50% {
     transform: translateY(-100px);
   }
+
   75% {
     transform: translateY(-150px);
   }
+
   100% {
     transform: translateY(-200px);
   }
 }
+
 .rot-item {
   font-size: 30px;
   font-weight: bold;
@@ -70,16 +84,27 @@ body {
   height: 50px;
   text-transform: uppercase;
 }
+
 .astro {
   animation: updown 3s linear infinite;
+  width: 500px;
+  height: 500px;
 }
+
+.astro img {
+  width: 100%;
+  height: 100%;
+}
+
 @keyframes updown {
   0% {
     transform: translateY(-30px);
   }
+
   50% {
     transform: translateY(40px);
   }
+
   100% {
     transform: translateY(-30px);
   }
@@ -92,14 +117,49 @@ body {
   margin-bottom: 30px;
   color: #fff;
   font-weight: 700;
-  background-image: linear-gradient(
-    to right,
-    #270537,
-    #381e5f,
-    #41398b,
-    #3e56ba,
-    #1276eb
-  );
+  background-image: linear-gradient(to right,
+      #270537,
+      #381e5f,
+      #41398b,
+      #3e56ba,
+      #1276eb);
 }
-.name {
+
+.intro-text {
+  width: 70%;
+}
+
+.name {}
+
+@media screen and (max-width:850px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .container-bg {
+    margin: 0 auto;
+    margin-bottom: 350px;
+    text-align: center;
+
+
+  }
+
+  .rot-wrapper {
+    .my-ani {
+      text-align: center;
+    }
+
+
+  }
+
+  .astro {
+    margin: 0 auto;
+  }
+
+  .intro-text {
+    text-align: center;
+    width: 60%;
+    padding: 0;
+    margin: 0 auto;
+  }
 }

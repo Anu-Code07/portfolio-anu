@@ -10,12 +10,13 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 const NavBar: React.FC = () => {
   const [activeLink, setActiveLink] = useState<string>("home");
   const [scrolls, setScrolled] = useState<boolean>();
+  const [mobilemenu,setMobileMenu]=useState(false)
   const navigate = useNavigate();
   const url = useLocation();
   const pathname = url.pathname;
   useEffect(() => {
     const onScroll = () => {
-      if (window.scrollY > 80) {
+      if (window.scrollY > 500) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -28,7 +29,13 @@ const NavBar: React.FC = () => {
   useEffect(() => {
     setActiveLink(pathname);
   }, [pathname]);
-
+const showMobileMenu=()=>{
+  //  window.addEventListener('click',()=>{
+  //   let navs=document.querySelector('.nav-text')
+  //   navs?.classList.toggle('.toggle-menu')
+  //    })
+  setMobileMenu(!mobilemenu)
+}
   return (
     <Box className="nav-container">
       <Box className={scrolls ? "scrolled" : "nav-content"}>
@@ -46,7 +53,7 @@ const NavBar: React.FC = () => {
           }}>ANURAG</Typography>
         </Box>
 
-        <Box className="nav-texts" sx={{}}>
+        <Box className={`${mobilemenu?`toggle-menu`:`nav-texts`}`}>
           <Typography
             sx={{
               fontSize: "1.5rem",
@@ -79,18 +86,30 @@ const NavBar: React.FC = () => {
           >
             <NavLink to="/projects">Projects</NavLink>
           </Typography>
+           <Button variant="outlined">Download Resume</Button>
           <Box
             sx={{
               display: "flex",
               alignItems: "center",
             }}
           >
-            <Box
+           
+           
+          </Box>
+        </Box>
+        <Box className={`${mobilemenu?`active-mobile`:`hamburger-menu`}`}  onClick={showMobileMenu}>
+          <div className="line1"></div>
+          <div className="line2"></div>
+          <div className="line3"></div>
+        </Box>
+      </Box>
+       <Box
               sx={{
                 position: "fixed",
                 right: 10,
-                top: "50%",
-                display: "flex",
+                top: "40%",
+              display: "flex",
+              zIndex:"10",
                 flexDirection: "column",
 
                 justifyContent: "space-between",
@@ -125,10 +144,6 @@ const NavBar: React.FC = () => {
                 />
               </div>
             </Box>
-            <Button variant="outlined">Download Resume</Button>
-          </Box>
-        </Box>
-      </Box>
     </Box>
   );
 };

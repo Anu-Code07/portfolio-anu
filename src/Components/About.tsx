@@ -9,16 +9,13 @@ function About() {
   const url = useLocation();
   const pathname = url.pathname;
   return (
-      <m.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
-      exit={{ opacity: 0, x: -100 }}
-    >
+    
     
       <div className={pathname === "/about" ? "abg" : "jump-up"}>
         {pathname === "/about" ? <NavBar /> : ""}
-        <Box className="about">
+        <Box className="about" sx={{
+        
+        }}>
           <Box className="img-container">
             <div className="card-bg"></div>
             <div className="card">
@@ -60,7 +57,7 @@ function About() {
         </Box>
         <Box className="skills"></Box>
       </div>
-      </m.div>
+    
   
   );
 }

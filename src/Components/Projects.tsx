@@ -16,6 +16,9 @@ import { motion as m } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import "../styles/projects.scss";
 import Movie from "../assets/img/skills/movie.jpg";
+import Todo from "../assets/img/todoapp.png";
+import ShowProjectDetails from "./ShowProjectDetails";
+import { projectTodoApp } from "../projects";
 function Projects() {
   const url = useLocation();
   const pathname = url.pathname;
@@ -80,7 +83,7 @@ function Projects() {
         </Grid>
         <Grid item xs={12} md={6} lg={4}>
           <Card sx={{ maxWidth: 345 }}>
-            <CardMedia component="img" height="140" image={Movie} alt="movie" />
+            <CardMedia component="img" height="140" image={Todo} alt="movie" />
             <CardContent>
               <Typography
                 gutterBottom
@@ -94,7 +97,7 @@ function Projects() {
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 What's special about a todo list you ask? Well its made with
-                <b> Recoil.js</b>!, a global statemanagement libary
+                <b> Recoil.js</b>, a global state management libary
               </Typography>
             </CardContent>
             <CardActions>
@@ -107,7 +110,10 @@ function Projects() {
                   Live Demo
                 </Link>
               </Button>
-              <Button size="small">Learn More</Button>
+              <ShowProjectDetails
+                title={projectTodoApp.title}
+                info={projectTodoApp.techStack}
+              />
             </CardActions>
           </Card>
         </Grid>

@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import NavBar from "./Navbar";
-import { motion as m } from "framer-motion";
+
 import { useLocation } from "react-router-dom";
 import "../styles/projects.scss";
 import Movie from "../assets/img/skills/movie.jpg";

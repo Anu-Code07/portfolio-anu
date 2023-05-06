@@ -20,139 +20,169 @@ import JS from "../assets/img/skills/js.png";
 import react from "../assets/img/skills/reactjs1.jpg";
 import recoilimg from "../assets/img/skills/recoil.jpeg";
 import uiux from "../assets/img/skills/uiux.jpg";
-import { motion as m } from "framer-motion";
+
 function Skills() {
   const url = useLocation();
   const pathname = url.pathname;
 
   return (
- 
-      <Box className={pathname === "/skills" ? "skills-bg" : "jump-up"}>
-        {pathname === "/skills" ? <NavBar /> : ""}
-        <Box className="container">
-          <div>
-            <Box className="skills-heading">
-              <Typography variant="h2" sx={{}}>
-                Skills and Experience
-              </Typography>
-              <Divider
-                sx={{
-                  height: "4px",
-                  backgroundColor: "#61bffb",
-                  width: "40%",
-                  ml: 3,
-                }}
-              />
-            </Box>
-            <Grid
-              container
-              spacing={1}
+    <Box className={pathname === "/skills" ? "skills-bg" : "jump-up"}>
+      {pathname === "/skills" ? <NavBar /> : ""}
+      <Box className="container">
+        <div>
+          <Box className="skills-heading">
+            <Typography variant="h2" sx={{}}>
+              Skills and Experience
+            </Typography>
+            <Divider
               sx={{
-                padding: "30px",
-                justifyContent:"center"
+                height: "4px",
+                backgroundColor: "#61bffb",
+                width: "40%",
+                ml: 3,
               }}
-              rowGap={2}
-              className="Cardcontainer"
-            >
-              <Grid item xs={12} md={6} lg={4} >
-                <div className="cards">
-                  <div className="front">
-                    <img src={TS} alt="" />
-                  </div>
-                  <div className="back">
-                    <h2>Typescript</h2>
-              <div className="descp">
-                  <p>Proficient in TypeScript with experience developing TypeScript applications using React</p>
-       
-                  <p>Skill Level : Intermediate</p>
-                  <p>Projects: Enterpise Level Dashboards</p>
-                  </div>
-        
-                  </div>
+            />
+          </Box>
+          <Grid
+            container
+            spacing={1}
+            sx={{
+              padding: "30px",
+              justifyContent: "center",
+            }}
+            rowGap={2}
+            className="Cardcontainer"
+          >
+            <Grid item xs={12} md={6} lg={4}>
+              <div className="cards">
+                <div className="front">
+                  <img src={TS} alt="" />
                 </div>
-              </Grid>
-              <Grid item  xs={12} md={6} lg={4} >
-               
-                <div className="cards">
-                  <div className="front">
-                    <img src={react} alt="" />
-                  </div>
-                  <div className="back">
-                       <h2>React</h2>
-              <div className="descp">
-                  <p>I have great love for React I love how easy and simple it is to use  </p>
-       
-                  <p>Skill Level : Intermediate</p>
-                  <p>Projects: Enterpise Level Dashboards</p>
-                  </div>
-                  </div>
-                </div>
-             
-              </Grid>
-              <Grid item  xs={12} md={6} lg={4} >
-                <div className="cards">
-                  <div className="front">
-                    <img src={JS} alt="" />
-                  </div>
-                  <div className="back">
-                        <h2>Javascript</h2>
-                   <div className="descp">
-                  <p>I have loving relationship with JS, have been working on ever since started programming </p>
-       
-                  <p>Skill Level : Intermediate</p>
-                  <p>Projects: Enterpise Level Dashboards</p>
-                  </div>
-                  </div>
-                </div>
-              </Grid>
-              <Grid item  xs={12} md={6} lg={4}>
-                <div className="cards">
-                  <div className="front">
-                    <img src={HTML} alt="" />
-                  </div>
-                  <div className="back">
-                    <h1>Back of Card</h1>
-                    <p>Hey</p>
-                  </div>
-                </div>
-              </Grid>
-              <Grid item  xs={12} md={6} lg={4}>
-                <div className="cards">
-                  <div className="front">
-                    <img src={recoilimg} alt="" />
-                  </div>
-                  <div className="back">
-                        <h2>Recoil</h2> 
-                    <div className="descp">
-                  <p>Proficient in using Recoil as state  management Library developed by Facebook </p>
-       
-                  <p>Skill Level : Intermediate</p>
-                  <p>Projects: Enterpise Level Dashboards</p>
-                  </div>
-                  </div>
-                </div>
-              </Grid>
-              <Grid item  xs={12} md={6} lg={4}>
-                <div className="cards">
-                  <div className="front">
-                    <img src={uiux} alt="" />
-                  </div>
-                  <div className="back">
-                    <h1>Back of Card</h1>
-                    <p>Hey</p>
-                  </div>
-                </div>
-              </Grid>
-            </Grid>
-          </div>
-        </Box>
-        <Box
-          sx={{
-            height: "200px",
-          }}
-        ></Box>
-      </Box>
+                <div className="back">
+                  <h2 className="back-card-heading">Typescript</h2>
+                  <div className="descp">
+                    <p>
+                      Having a strong foundation in JavaScript, I have embraced
+                      TypeScript as it brings the benefits of static typing,
+                      enhanced tooling, and improved code maintainability to my
+                      development workflow.
+                    </p>
 
+                    <p>Skill Level : Intermediate</p>
+                  </div>
+                </div>
+              </div>
+            </Grid>
+            <Grid item xs={12} md={6} lg={4}>
+              <div className="cards">
+                <div className="front">
+                  <img src={react} alt="" />
+                </div>
+                <div className="back">
+                  <h2 className="back-card-heading">React</h2>
+                  <div className="descp">
+                    <p>
+                      I am well-versed in React's core concepts like component
+                      lifecycle, state management, and virtual DOM manipulation,
+                      which enables me to build performant and responsive
+                      applications. I have hands-on experience working with
+                      React Router, and Material-UI, empowering me to build
+                      robust and feature-rich applications.
+                    </p>
+
+                    <p>Skill Level : Intermediate</p>
+                  </div>
+                </div>
+              </div>
+            </Grid>
+            <Grid item xs={12} md={6} lg={4}>
+              <div className="cards">
+                <div className="front">
+                  <img src={JS} alt="" />
+                </div>
+                <div className="back">
+                  <h2 className="back-card-heading">Javascript</h2>
+                  <div className="descp">
+                    <p>
+                      JavaScript is at the core of my development toolkit, and I
+                      am proficient in both vanilla JavaScript and modern
+                      frameworks like React
+                    </p>
+
+                    <p>Skill Level : Intermediate</p>
+                  </div>
+                </div>
+              </div>
+            </Grid>
+            <Grid item xs={12} md={6} lg={4}>
+              <div className="cards">
+                <div className="front">
+                  <img src={HTML} alt="" />
+                </div>
+                <div className="back">
+                  <h1 className="back-card-heading">HTML & CSS</h1>
+                  <div className="descp">
+                    <p>
+                      HTML and CSS are the building blocks of the web, and I
+                      have a deep understanding of both languages. I am
+                      proficient in writing semantic and accessible HTML code
+                      that adheres to best practices.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Grid>
+            <Grid item xs={12} md={6} lg={4}>
+              <div className="cards">
+                <div className="front">
+                  <img src={recoilimg} alt="" />
+                </div>
+                <div className="back">
+                  <h2 className="back-card-heading">Recoil</h2>
+                  <div className="descp">
+                    <p>
+                      Recoil.js is a state management library for React that I
+                      have extensively worked with. I am proficient in
+                      implementing Recoil's atoms, selectors, and hooks to
+                      efficiently manage complex application state.
+                    </p>
+
+                    <p>Skill Level : Intermediate</p>
+                  </div>
+                </div>
+              </div>
+            </Grid>
+            <Grid item xs={12} md={6} lg={4}>
+              <div className="cards">
+                <div className="front">
+                  <img src={uiux} alt="" />
+                </div>
+                <div className="back">
+                  <h1
+                    className="back-card-heading
+                  "
+                  >
+                    Back of Card
+                  </h1>
+                  <div className="descp">
+                    <p>
+                      I have a understanding of user-centered design principles
+                      and creating wireframes and prototypes to ensure intuitive
+                      and user-friendly interfaces.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Grid>
+          </Grid>
+        </div>
+      </Box>
+      <Box
+        sx={{
+          height: "200px",
+        }}
+      ></Box>
+    </Box>
   );
 }
 

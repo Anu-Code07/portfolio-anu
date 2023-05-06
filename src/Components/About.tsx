@@ -1,64 +1,67 @@
-import { Box, Typography } from "@mui/material";
+import { Box, List, ListItem, Typography } from "@mui/material";
 import React from "react";
 import NavBar from "./Navbar";
 import "../styles/about.scss";
 import Anu from "../assets/img/anu.jpeg";
 import { useLocation } from "react-router-dom";
-import { motion as m } from "framer-motion";
+
 function About() {
   const url = useLocation();
   const pathname = url.pathname;
   return (
-    
-    
-      <div className={pathname === "/about" ? "abg" : "jump-up"}>
-        {pathname === "/about" ? <NavBar /> : ""}
-        <Box className="about" sx={{
-        
-        }}>
-          <Box className="img-container">
-            <div className="card-bg"></div>
-            <div className="card">
-              <img src={Anu} alt="image" className="me" />
-            </div>
-          </Box>
-          <Box className="text-container">
-            <Typography
-              variant="h1"
-              sx={{
-                textAlign: "left",
-                mb: 2,
-              }}
-            >
-              About Me
-            </Typography>
-            <Box
-              sx={{
-                width: "90%",
-                textAlign: "left",
-              }}
-            >
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Sapiente consectetur voluptates eveniet dolorum iste autem
-                repellat deleniti nulla fuga, modi accusantium sed ipsam optio
-                animi cupiditate illo praesentium atque quaerat. Lorem, ipsum
-                dolor sit amet consectetur adipisicing elit. Debitis, at iste.
-                Eius, veniam quae? Consectetur debitis repudiandae, aliquid
-                cumque, optio architecto quibusdam exercitationem dolor sed
-                nesciunt vel beatae placeat voluptates. Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Beatae temporibus facere
-                velit, rem dolor fugiat deserunt, nobis, porro nihil in quia
-                suscipit voluptatibus veritatis animi architecto. Consequuntur
-                hic nihil quis.
-              </p>
-            </Box>
+    <div className={pathname === "/about" ? "abg" : "jump-up"}>
+      {pathname === "/about" ? <NavBar /> : ""}
+      <Box className="about" sx={{}}>
+        <Box className="img-container">
+          <div className="card-bg"></div>
+          <div className="card">
+            <img src={Anu} alt="image" className="me" />
+          </div>
+        </Box>
+        <Box className="text-container">
+          <Typography
+            variant="h2"
+            sx={{
+              textAlign: "left",
+              mb: 2,
+            }}
+          >
+            About Me
+          </Typography>
+          <Box
+            sx={{
+              width: "85%",
+              textAlign: "justify",
+            }}
+          >
+            <List>
+              <ListItem>
+                <Typography variant="body1">
+                  <span
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "24px",
+                      color: "#61bffb",
+                    }}
+                  >
+                    Hi
+                  </span>
+                  , I'm Anurag, a passionate and creative front-end developer
+                  crafting user-friendly and visually appealing web experiences.
+                  With a strong foundation in HTML, CSS, and JavaScript and
+                  React, I specialize in translating design concepts into
+                  functional and responsive websites. In addition to my
+                  technical skills, I have a keen eye for design aesthetics and
+                  a deep understanding of user experience principles.
+                </Typography>
+              </ListItem>
+              <ListItem></ListItem>
+            </List>
           </Box>
         </Box>
-        <Box className="skills"></Box>
-      </div>
-    
-  
+      </Box>
+      <Box className="skills"></Box>
+    </div>
   );
 }
 

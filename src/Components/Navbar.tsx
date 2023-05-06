@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Link, Typography } from "@mui/material";
 import "../styles/navbar.scss";
 import { useEffect, useState } from "react";
 import Logo from "../assets/img/logo.svg";
@@ -7,11 +7,14 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
+import { useNotify } from "../utils/useNotify";
+
 const NavBar: React.FC = () => {
   const [activeLink, setActiveLink] = useState<string>("home");
   const [scrolls, setScrolled] = useState<boolean>();
-  const [mobilemenu,setMobileMenu]=useState(false)
+  const [mobilemenu, setMobileMenu] = useState(false);
   const navigate = useNavigate();
+  const notify = useNotify();
   const url = useLocation();
   const pathname = url.pathname;
   useEffect(() => {
@@ -29,13 +32,22 @@ const NavBar: React.FC = () => {
   useEffect(() => {
     setActiveLink(pathname);
   }, [pathname]);
-const showMobileMenu=()=>{
-  //  window.addEventListener('click',()=>{
-  //   let navs=document.querySelector('.nav-text')
-  //   navs?.classList.toggle('.toggle-menu')
-  //    })
-  setMobileMenu(!mobilemenu)
-}
+  const showMobileMenu = () => {
+    //  window.addEventListener('click',()=>{
+    //   let navs=document.querySelector('.nav-text')
+    //   navs?.classList.toggle('.toggle-menu')
+    //    })
+    setMobileMenu(!mobilemenu);
+  };
+
+  function downloadResume() {
+    const link = document.createElement("a");
+    link.download = `Resume.pdf`;
+    link.href =
+      "https://drive.google.com/file/d/1EixqJysFWNu95jSDW1nDh_ptDhR8-cBs/view?usp=sharing";
+    link.target = "_blank";
+    link.click();
+  }
   return (
     <Box className="nav-container">
       <Box className={scrolls ? "scrolled" : "nav-content"}>
@@ -46,14 +58,18 @@ const showMobileMenu=()=>{
           }}
         >
           {/* <img src={Logo} alt="logo" width="100px" height="100px" /> */}
-          <Typography style={{
-            fontSize:"2.2rem",
-            fontWeight:"bold",
-            letterSpacing:"10px"
-          }}>ANURAG</Typography>
+          <Typography
+            style={{
+              fontSize: "2.2rem",
+              fontWeight: "bold",
+              letterSpacing: "10px",
+            }}
+          >
+            ANURAG
+          </Typography>
         </Box>
 
-        <Box className={`${mobilemenu?`toggle-menu`:`nav-texts`}`}>
+        <Box className={`${mobilemenu ? `toggle-menu` : `nav-texts`}`}>
           <Typography
             sx={{
               fontSize: "1.5rem",
@@ -86,64 +102,67 @@ const showMobileMenu=()=>{
           >
             <NavLink to="/projects">Projects</NavLink>
           </Typography>
-           <Button variant="outlined">Download Resume</Button>
+          <Button variant="outlined" onClick={downloadResume}>
+            Download Resume
+          </Button>
+
           <Box
             sx={{
               display: "flex",
               alignItems: "center",
             }}
-          >
-           
-           
-          </Box>
+          ></Box>
         </Box>
-        <Box className={`${mobilemenu?`active-mobile`:`hamburger-menu`}`}  onClick={showMobileMenu}>
+        <Box
+          className={`${mobilemenu ? `active-mobile` : `hamburger-menu`}`}
+          onClick={showMobileMenu}
+        >
           <div className="line1"></div>
           <div className="line2"></div>
           <div className="line3"></div>
         </Box>
       </Box>
-       <Box
-              sx={{
-                position: "fixed",
-                right: 10,
-                top: "40%",
-              display: "flex",
-              zIndex:"10",
-                flexDirection: "column",
+      <Box
+        sx={{
+          position: "fixed",
+          right: 10,
+          top: "40%",
+          display: "flex",
+          zIndex: "10",
+          flexDirection: "column",
 
-                justifyContent: "space-between",
-              }}
-              className="social-bg"
-            >
-              <div className="social-img">
-                <GitHubIcon
-                  sx={{
-                    color: "#fff",
-                    fontSize: "35px",
-                    mt: 2,
-                  }}
-                />
-              </div>
-              <div className="social-img">
-                <InstagramIcon
-                  sx={{
-                    color: "#fff",
-                    fontSize: "35px",
-                    mt: 2,
-                  }}
-                />
-              </div>
-              <div className="social-img">
-                <LinkedInIcon
-                  sx={{
-                    color: "#fff",
-                    fontSize: "35px",
-                    mt: 2,
-                  }}
-                />
-              </div>
-            </Box>
+          justifyContent: "space-between",
+        }}
+        className="social-bg"
+      >
+        <div className="social-img">
+          <GitHubIcon
+            sx={{
+              color: "#fff",
+              fontSize: "35px",
+              mt: 2,
+            }}
+          />
+        </div>
+        <div className="social-img">
+          <InstagramIcon
+            sx={{
+              color: "#fff",
+              fontSize: "35px",
+              mt: 2,
+            }}
+          />
+        </div>
+        <div className="social-img">
+          <LinkedInIcon
+            sx={{
+              color: "#fff",
+              fontSize: "35px",
+              mt: 2,
+            }}
+          />
+        </div>
+      </Box>
     </Box>
   );
 };

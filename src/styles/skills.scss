@@ -73,6 +73,9 @@
   }
 
   .descp {
+    padding: 8px;
+
+
     p {
       margin-bottom: 8px;
     }
@@ -133,6 +136,17 @@
   transform: rotateY(180deg);
 }
 
+
+.back-card-heading::after {
+  content: "";
+  display: block;
+  width: 80%;
+  background-color: #61BFFB;
+  height: 3px;
+  border-radius: 5px;
+  margin: 5px auto;
+}
+
 @media screen and (max-width:1000px) {
   .Cardcontainer {}
 
@@ -144,6 +158,8 @@
       font-size: 40px;
     }
   }
+
+
 
   .cards {
     height: 300px;

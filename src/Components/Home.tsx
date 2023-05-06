@@ -5,14 +5,15 @@ import "../styles/home.scss";
 import headerImg from "../assets/img/header-img.svg";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import About from "./About";
-import { motion as m } from "framer-motion";
+
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Footer from "./Footer";
+import EmailMessage from "./EmailMessage";
 
 const Home = () => {
   return (
-  <div>
+    <div>
       <Box className="container-bg">
         <NavBar />
         <Box className="main-content">
@@ -46,35 +47,27 @@ const Home = () => {
               sx={{
                 mt: 3,
                 // width:"500px"
-            
               }}
               className="intro-text"
             >
               <Typography
                 sx={{
-               
                   color: "#fff",
-                 
                 }}
-               
               >
-               I’m a Front end software developer, with a particular passion for design, creativity and I love <span style={{
-                fontSize:"20px",
-                color:"#61bffb"
-
-               }}>React</span>
+                I’m a Front end software developer, with a particular passion
+                for design, creativity and I love{" "}
+                <span
+                  style={{
+                    fontSize: "20px",
+                    color: "#61bffb",
+                  }}
+                >
+                  React
+                </span>
               </Typography>
             </Box>
-            <Button
-              variant="outlined"
-              sx={{
-                mt: 4,
-              }}
-              endIcon={<ArrowForwardIcon sx={{}} />}
-            >
-              {" "}
-              Connect with me
-            </Button>
+            <EmailMessage />
           </Box>
           <Box
             className="astro"
@@ -90,8 +83,7 @@ const Home = () => {
       <Skills />
       <Projects />
       <Footer />
-      </div>
-  
+    </div>
   );
 };
 

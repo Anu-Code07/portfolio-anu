@@ -1,4 +1,4 @@
-import { Box, Button, Link, Typography } from "@mui/material";
+import { Box, Button, IconButton, Link, Typography } from "@mui/material";
 import "../styles/navbar.scss";
 import { useEffect, useState } from "react";
 import Logo from "../assets/img/logo.svg";
@@ -48,6 +48,16 @@ const NavBar: React.FC = () => {
     link.target = "_blank";
     link.click();
   }
+  const gotoSocial = (social: string) => {
+    const link = document.createElement("a");
+    if (social === "git") {
+      link.href = "https://github.com/Anu-Code07";
+    } else {
+      link.href = "https://www.linkedin.com/in/anurag-kumar-singh-14473718a/";
+    }
+    link.target = "_blank";
+    link.click();
+  };
   return (
     <Box className="nav-container">
       <Box className={scrolls ? "scrolled" : "nav-content"}>
@@ -136,31 +146,27 @@ const NavBar: React.FC = () => {
         className="social-bg"
       >
         <div className="social-img">
-          <GitHubIcon
-            sx={{
-              color: "#fff",
-              fontSize: "35px",
-              mt: 2,
-            }}
-          />
+          <IconButton onClick={() => gotoSocial("git")}>
+            <GitHubIcon
+              sx={{
+                color: "#fff",
+                fontSize: "35px",
+                mt: 2,
+              }}
+            />
+          </IconButton>
         </div>
+
         <div className="social-img">
-          <InstagramIcon
-            sx={{
-              color: "#fff",
-              fontSize: "35px",
-              mt: 2,
-            }}
-          />
-        </div>
-        <div className="social-img">
-          <LinkedInIcon
-            sx={{
-              color: "#fff",
-              fontSize: "35px",
-              mt: 2,
-            }}
-          />
+          <IconButton onClick={() => gotoSocial("linkedin")}>
+            <LinkedInIcon
+              sx={{
+                color: "#fff",
+                fontSize: "35px",
+                mt: 2,
+              }}
+            />
+          </IconButton>
         </div>
       </Box>
     </Box>

@@ -162,7 +162,7 @@ function Skills() {
                     className="back-card-heading
                   "
                   >
-                    Back of Card
+                   UI/UX
                   </h1>
                   <div className="descp">
                     <p>

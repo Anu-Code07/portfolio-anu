@@ -44,7 +44,7 @@ const NavBar: React.FC = () => {
     const link = document.createElement("a");
     link.download = `Resume.pdf`;
     link.href =
-      "https://drive.google.com/file/d/1EixqJysFWNu95jSDW1nDh_ptDhR8-cBs/view?usp=sharing";
+      "https://drive.google.com/file/d/1gKRzxSvN1Iv5u5V4RYl_bSztbAhlnrRm/view?usp=sharing";
     link.target = "_blank";
     link.click();
   }

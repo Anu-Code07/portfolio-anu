@@ -17,8 +17,7 @@ import { useLocation } from "react-router-dom";
 import "../styles/projects.scss";
 import Movie from "../assets/img/skills/movie.jpg";
 import Todo from "../assets/img/todoapp.png";
-import ShowProjectDetails from "./ShowProjectDetails";
-import { projectTodoApp } from "../projects";
+import Budget from "../assets/img/Budget.png";
 function Projects() {
   const url = useLocation();
   const pathname = url.pathname;
@@ -77,7 +76,6 @@ function Projects() {
                   Live Demo
                 </Link>
               </Button>
-              <Button size="small">Learn More</Button>
             </CardActions>
           </Card>
         </Grid>
@@ -110,10 +108,43 @@ function Projects() {
                   Live Demo
                 </Link>
               </Button>
-              <ShowProjectDetails
-                title={projectTodoApp.title}
-                info={projectTodoApp.techStack}
-              />
+            </CardActions>
+          </Card>
+        </Grid>
+        <Grid item xs={12} md={6} lg={4}>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardMedia
+              component="img"
+              height="140"
+              image={Budget}
+              alt="budget"
+            />
+            <CardContent>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="div"
+                sx={{
+                  fontWeight: "bold",
+                }}
+              >
+                Todo List
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Manage your Expenses with Ease
+                <b> Budget app made with Context API</b>
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small" onClick={() => {}} variant="text">
+                <Link
+                  href="https://budget-app-ten-tau.vercel.app/"
+                  target={"_blank"}
+                >
+                  {" "}
+                  Live Demo
+                </Link>
+              </Button>
             </CardActions>
           </Card>
         </Grid>

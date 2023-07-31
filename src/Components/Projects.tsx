@@ -91,7 +91,7 @@ function Projects() {
                   fontWeight: "bold",
                 }}
               >
-                Budget App
+                Todo List
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 What's special about a todo list you ask? Well its made with
@@ -128,7 +128,7 @@ function Projects() {
                   fontWeight: "bold",
                 }}
               >
-                Todo List
+                Budget App
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 Manage your Expenses with Ease
